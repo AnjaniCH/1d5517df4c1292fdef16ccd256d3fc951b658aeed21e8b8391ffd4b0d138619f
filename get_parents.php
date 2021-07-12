@@ -9,7 +9,7 @@ $dbConnection = new mysqli("localhost", "root", "", "griyabayar");
 // Get the result from DB Table
 $records = $dbConnection->query("SELECT m1.name as child_name
                                 from member m1 join member m2 on (m2.parent_id = m1.id) 
-                                where m2.name = '$name' GROUP BY m2.parent_id");
+                                where m2.name = '$name' ");
 
 // Fetch all records
 // @MYSQLI_ASSOC - Columns are returned into the array having the field name as the array index.
