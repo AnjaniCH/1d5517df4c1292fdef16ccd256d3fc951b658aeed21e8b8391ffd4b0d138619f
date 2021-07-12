@@ -8,7 +8,7 @@ $dbConnection = new mysqli("localhost", "root", "", "griyabayar");
 
 // Get the result from DB Table
 $records = $dbConnection->query("SELECT m2.name as parent_name from member m2 
-                                join member m1 on (m1.id = m2.parent_id) where m1.name = '$name'");
+                                left join member m1 on (m1.id = m2.parent_id) where m1.name = '$name'");
 
 // Fetch all records
 // @MYSQLI_ASSOC - Columns are returned into the array having the field name as the array index.
