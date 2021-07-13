@@ -7,7 +7,7 @@ function get_children($name) { //15pts
 $dbConnection = new mysqli("localhost", "root", "", "griyabayar");
 
 // Get the result from DB Table
-$records = $dbConnection->query("SELECT m2.name as parent_name from member m2 
+$records = $dbConnection->query("SELECT m2.name from member m2 
                                 left join member m1 on (m1.id = m2.parent_id) where m1.name = '$name'");
 
 // Fetch all records
